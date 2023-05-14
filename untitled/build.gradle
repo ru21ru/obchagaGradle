@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+}
+
+group 'ru.obshaga'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+
+    // Get the 19.7.0.0 Oracle JDBC driver along with other companion jars
+    implementation('org.postgresql:postgresql:42.6.0')
+    implementation ('com.zaxxer:HikariCP:5.0.1')
+    implementation 'org.apache.logging.log4j:log4j-slf4j-impl:2.20.0'
+    // implementation 'org.slf4j:slf4j-log4j12:2.0.7'
+}
+
+test {
+    useJUnitPlatform()
+}
